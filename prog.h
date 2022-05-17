@@ -7,6 +7,8 @@ class Shad {
 		GLuint _id;
 
 		Shad(std::string name, bool vtx);
+
+		~Shad();
 };
 
 class Prog {
@@ -18,4 +20,6 @@ class Prog {
 		void use();
 
 		void unUse();
+
+		~Prog();
 };

@@ -37,6 +37,10 @@ Shad::Shad(std::string name, bool vtx) {
 	}
 }
 
+Shad::~Shad() {
+	glDeleteShader(_id);
+}
+
 Prog::Prog(std::string vtx, std::string frag) {
 	/* shader */
 	/// vertex
@@ -58,4 +62,8 @@ void Prog::use() {
 
 void Prog::unUse() {
 	glUseProgram(0);
+}
+
+Prog::~Prog() {
+	glDeleteProgram(_id);
 }
