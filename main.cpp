@@ -116,9 +116,6 @@ int main(int argc, char* argv[]) {
 	glEnableVertexAttribArray(attrPos);
 
 	/// uniform
-	GLint uniRes = glGetUniformLocation(prog._id, "res");
-	glUniform2fv(uniRes, 2, glm::value_ptr(res));
-
 	GLint uniScale = glGetUniformLocation(prog._id, "scale");
 	glUniform1f(uniScale, scale);
 
