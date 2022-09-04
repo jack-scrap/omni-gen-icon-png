@@ -26,6 +26,8 @@ int main(int argc, char* argv[]) {
 
 	Disp disp("asdf", res[0], res[1]);
 
+	const float scale = (1.0 - -1.0) / (0.26 - -0.26);
+
 	// data
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
@@ -116,6 +118,9 @@ int main(int argc, char* argv[]) {
 	/// uniform
 	GLint uniRes = glGetUniformLocation(prog._id, "res");
 	glUniform2fv(uniRes, 2, glm::value_ptr(res));
+
+	GLint uniScale = glGetUniformLocation(prog._id, "scale");
+	glUniform1f(uniScale, scale);
 
 	prog.unUse();
 
