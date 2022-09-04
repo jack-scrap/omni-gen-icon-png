@@ -20,10 +20,38 @@ int main() {
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-	GLfloat vtc[3 * 3] = {
-		-1.0, -1.0, 0.0,
-		1.0, -1.0, 0.0,
-		0.0, 1.0, 0.0
+	GLfloat vtc[] = {
+		-0.26, -0.26, 0.0,
+		0.16, -0.26, 0.0,
+		-0.10, -0.10, 0.0,
+
+		0.06, -0.10, 0.0,
+		0.16, -0.26, 0.0,
+		0.26, -0.16, 0.0,
+
+		0.06, -0.10, 0.0,
+		0.10, -0.06, 0.0,
+		0.26, -0.16, 0.0,
+
+		0.26, 0.26, 0.0,
+		0.10, -0.06, 0.0,
+		0.10, 0.10, 0.0,
+
+		0.26, 0.26, 0.0,
+		-0.16, 0.26, 0.0,
+		0.10, 0.10, 0.0,
+
+		-0.06, 0.10, 0.0,
+		-0.16, 0.26, 0.0,
+		-0.26, 0.16, 0.0,
+
+		-0.06, 0.10, 0.0,
+		-0.10, 0.06, 0.0,
+		-0.10, 0.06, 0.0,
+
+		-0.26, 0.16, 0.0,
+		-0.10, -0.10, 0.0,
+		-0.26, -0.26, 0.0
 	};
 	glBufferData(GL_ARRAY_BUFFER, sizeof vtc, vtc, GL_STATIC_DRAW);
 
@@ -32,7 +60,29 @@ int main() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 
 	GLushort idc[] = {
-		0, 1, 2
+		0, 1, 2,
+
+		2, 1, 3,
+
+		4, 5, 6,
+
+		6, 5, 7,
+
+		8, 9, 10,
+
+		10, 9, 11,
+
+		12, 13, 14,
+
+		14, 13, 15,
+
+		16, 17, 18,
+
+		18, 17, 19,
+
+		20, 21, 22,
+
+		22, 21, 23
 	};
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof idc, idc, GL_STATIC_DRAW);
 
@@ -59,7 +109,7 @@ int main() {
 
 		glBindVertexArray(vao);
 
-		glDrawElements(GL_TRIANGLES, 3 * sizeof (GLushort), GL_UNSIGNED_SHORT, (GLvoid*) 0);
+		glDrawElements(GL_TRIANGLES, sizeof idc, GL_UNSIGNED_SHORT, (GLvoid*) 0);
 
 		glBindVertexArray(0);
 
