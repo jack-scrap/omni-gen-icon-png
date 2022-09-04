@@ -130,9 +130,11 @@ int main(int argc, char* argv[]) {
 		disp.clear(0, 0, 0, 1);
 
 		glBindVertexArray(vao);
+		prog.use();
 
 		glDrawElements(GL_TRIANGLES, sizeof idc, GL_UNSIGNED_SHORT, (GLvoid*) 0);
 
+		prog.unUse();
 		glBindVertexArray(0);
 
 		disp.update();
