@@ -27,6 +27,15 @@ int main() {
 	};
 	glBufferData(GL_ARRAY_BUFFER, sizeof vtc, vtc, GL_STATIC_DRAW);
 
+	GLuint ibo;
+	glGenBuffers(1, &ibo);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+
+	GLushort idc[] = {
+		0, 1, 2
+	};
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof idc, idc, GL_STATIC_DRAW);
+
 	// shader
 	Prog prog("shad", "shad");
 
@@ -48,7 +57,11 @@ int main() {
 
 		disp.clear(0, 0, 0, 1);
 
-		glDrawArrays(GL_TRIANGLES, 0, 3 * 3);
+		glBindVertexArray(vao);
+
+		glDrawElements(GL_TRIANGLES, 3 * sizeof (GLushort), GL_UNSIGNED_SHORT, (GLvoid*) 0);
+
+		glBindVertexArray(0);
 
 		disp.update();
 	}
