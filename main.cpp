@@ -153,15 +153,14 @@ int main(int argc, char* argv[]) {
 	// shader
 	Prog prog("logo", "solid");
 
-	// initialize
 	prog.use();
 
-	/// attribute
+	// attribute
 	GLint attrPos = glGetAttribLocation(prog._id, "pos");
 	glVertexAttribPointer(attrPos, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid*) 0);
 	glEnableVertexAttribArray(attrPos);
 
-	/// uniform
+	// uniform
 	GLint uniScale = glGetUniformLocation(prog._id, "scale");
 	glUniform1f(uniScale, scale);
 
