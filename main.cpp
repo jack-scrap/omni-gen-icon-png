@@ -7,9 +7,23 @@
 #include "prog.h"
 #include "util.h"
 
-glm::vec2 res = glm::vec2(128, 128);
+int main(int argc, char* argv[]) {
+	if (argc == 1) {
+		std::cout << "Error: No arguments" << std::endl;
 
-int main() {
+		return 1;
+	}
+
+	if (argc != 1 + 1) {
+		std::cout << "Error: Wrong number of arguments" << std::endl;
+
+		return 1;
+	}
+
+	int dim = atoi(argv[1]);
+
+	glm::vec2 res = glm::vec2(dim, dim);
+
 	Disp disp("asdf", res[0], res[1]);
 
 	// data
