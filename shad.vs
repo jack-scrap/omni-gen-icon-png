@@ -2,7 +2,7 @@
 
 in vec3 pos;
 
-vec2 res = vec2(800, 600);
+uvec2 res = uvec2(128, 128);
 
 float ratio = float(res.x) / float(res.y);
 
