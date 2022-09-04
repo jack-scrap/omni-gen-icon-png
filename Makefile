@@ -13,7 +13,7 @@ LDFLAGS+=$(SDLFLAGS)
 LDFLAGS+=$(GLFLAGS)
 
 .PHONY: all
-all: mk_build make mk_o
+all: mk_build omni_gen_icon mk_o
 
 $(BUILDDIR)/%.o: %.cpp %.h
 	$(CXX) -c $< -o $@ $(LDFLAGS)
@@ -22,8 +22,8 @@ $(BUILDDIR)/main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
 .PHONY: make
-make: $(OBJ_STATIC) $(HDR)
-	$(CXX) $^ $(LDFLAGS) -o a.out
+omni_gen_icon: $(OBJ_STATIC) $(HDR)
+	$(CXX) $^ $(LDFLAGS) -o $@
 
 .PHONY: mk_build
 mk_build:
