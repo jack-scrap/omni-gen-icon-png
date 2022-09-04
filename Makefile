@@ -7,10 +7,10 @@ BUILDDIR=build
 STATIC=main.cpp disp.cpp prog.cpp util.cpp
 OBJ_STATIC=$(STATIC:%.cpp=$(BUILDDIR)/%.o)
 
-GL=-lGLEW -lGL
-SDL=-lSDL2 -lSDL2_image
-LDFLAGS+=$(SDL)
-LDFLAGS+=$(GL)
+GLFLAGS=-lGLEW -lGL
+SDLFLAGS=-lSDL2 -lSDL2_image
+LDFLAGS+=$(SDLFLAGS)
+LDFLAGS+=$(GLFLAGS)
 
 .PHONY: all
 all: mk_build make mk_o
