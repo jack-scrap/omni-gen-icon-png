@@ -115,7 +115,7 @@ int main(int argc, char* argv[]) {
 
 	/// uniform
 	GLint uniRes = glGetUniformLocation(prog._id, "res");
-	glUniform2fv(uniRes, 2, &res[0]);
+	glUniform2fv(uniRes, 2, glm::value_ptr(res));
 
 	prog.unUse();
 
