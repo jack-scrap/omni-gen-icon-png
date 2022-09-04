@@ -7,8 +7,10 @@
 #include "prog.h"
 #include "util.h"
 
+glm::vec2 res = glm::vec2(128, 128);
+
 int main() {
-	Disp disp("asdf", 128, 128);
+	Disp disp("asdf", res[0], res[1]);
 
 	// data
 	GLuint vao;
@@ -89,13 +91,19 @@ int main() {
 	// shader
 	Prog prog("shad", "shad");
 
+	// initialize
+	prog.use();
+
 	/// attribute
 	GLint attrPos = glGetAttribLocation(prog._id, "pos");
 	glVertexAttribPointer(attrPos, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid*) 0);
 	glEnableVertexAttribArray(attrPos);
 
-	// initialize
-	prog.use();
+	/// uniform
+	GLint uniRes = glGetUniformLocation(prog._id, "res");
+	glUniform2fv(uniRes, 2, &res[0]);
+
+	prog.unUse();
 
 	SDL_Event e;
 	while (disp.open) {
