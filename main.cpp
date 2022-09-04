@@ -180,7 +180,7 @@ int main(int argc, char* argv[]) {
 
 	disp.update();
 
-	scr("o/icon.bmp", disp.win, disp.rend);
+	scr("o/icon_" + std::to_string(dim) + "x" + std::to_string(dim) + ".bmp", disp.win, disp.rend);
 
 	glDeleteBuffers(1, &vao);
 	glDeleteBuffers(1, &vbo);
