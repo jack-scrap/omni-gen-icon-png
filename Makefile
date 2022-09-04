@@ -8,9 +8,9 @@ SDL=-lSDL2 -lSDL2_image
 LDFLAGS+=$(SDL)
 LDFLAGS+=$(GL)
 
-.PHONY: clean
+.PHONY: clean mk_o
 
-all: make
+all: make mk_o
 
 %.o: %.cpp %.h
 	$(CXX) -c $< -o $@ $(LDFLAGS)
@@ -20,6 +20,9 @@ main.o: main.cpp
 
 make: $(OBJ_STATIC) $(HDR)
 	$(CXX) $^ $(LDFLAGS)
+
+mk_o:
+	mkdir -p o
 
 clean:
 	rm *.o a.out

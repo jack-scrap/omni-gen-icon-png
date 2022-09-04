@@ -180,7 +180,7 @@ int main(int argc, char* argv[]) {
 
 	disp.update();
 
-	scr("icon.bmp", disp.win, disp.rend);
+	scr("o/icon.bmp", disp.win, disp.rend);
 
 	glDeleteBuffers(1, &vao);
 	glDeleteBuffers(1, &vbo);
