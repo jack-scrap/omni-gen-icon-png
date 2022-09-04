@@ -144,4 +144,6 @@ int main(int argc, char* argv[]) {
 
 	glDeleteBuffers(1, &vao);
 	glDeleteBuffers(1, &vbo);
+
+	return 0;
 }
