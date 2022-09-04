@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof idc, idc, GL_STATIC_DRAW);
 
 	// shader
-	Prog prog("shad", "shad");
+	Prog prog("logo", "solid");
 
 	// initialize
 	prog.use();
