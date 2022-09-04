@@ -10,7 +10,7 @@ SDL=-lSDL2 -lSDL2_image
 LDFLAGS+=$(SDL)
 LDFLAGS+=$(GL)
 
-.PHONY: clean mk_build mk_o
+.PHONY: all make clean mk_build mk_o
 
 all: mk_build make mk_o
 
