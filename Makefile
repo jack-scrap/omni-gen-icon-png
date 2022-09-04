@@ -4,7 +4,7 @@ STATIC=main disp prog util
 OBJ_STATIC=$(patsubst %, %.o, $(STATIC))
 
 GL=-lGLEW -lGL
-SDL=-lSDL2
+SDL=-lSDL2 -lSDL2_image
 LDFLAGS+=$(SDL)
 LDFLAGS+=$(GL)
 
