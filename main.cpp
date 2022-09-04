@@ -7,6 +7,8 @@
 #include "prog.h"
 #include "util.h"
 
+const float scale = (1.0 - -1.0) / (0.26 - -0.26);
+
 int main(int argc, char* argv[]) {
 	if (argc == 1) {
 		std::cout << "Error: No arguments" << std::endl;
@@ -25,8 +27,6 @@ int main(int argc, char* argv[]) {
 	glm::vec2 res = glm::vec2(dim, dim);
 
 	Disp disp("asdf", res[0], res[1]);
-
-	const float scale = (1.0 - -1.0) / (0.26 - -0.26);
 
 	// data
 	GLuint vao;
