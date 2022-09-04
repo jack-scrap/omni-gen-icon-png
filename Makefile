@@ -2,8 +2,8 @@ CXX=g++
 
 BUILDDIR=build
 
-STATIC=main disp prog util
-OBJ_STATIC=$(STATIC:%=$(BUILDDIR)/%.o)
+STATIC=main.cpp disp.cpp prog.cpp util.cpp
+OBJ_STATIC=$(STATIC:%.cpp=$(BUILDDIR)/%.o)
 
 GL=-lGLEW -lGL
 SDL=-lSDL2 -lSDL2_image
