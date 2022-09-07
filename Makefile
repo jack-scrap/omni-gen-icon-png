@@ -44,4 +44,4 @@ install:
 
 .PHONY: clean
 clean:
-	rm $(BUILDDIR)/*.o a.out
+	rm $(BUILDDIR)/*.o omni_gen_icon
