@@ -18,7 +18,7 @@ LDFLAGS+=$(SDLFLAGS)
 LDFLAGS+=$(GLFLAGS)
 
 .PHONY: all
-all: mk_build omni_gen_icon mk_o
+all: mk_build omni_gen_icon_png mk_o
 
 $(BUILDDIR)/%.o: %.cpp %.h
 	$(CXX) -c $< -o $@ $(LDFLAGS)
@@ -27,7 +27,7 @@ $(BUILDDIR)/main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
 .PHONY: make
-omni_gen_icon: $(OBJ_STATIC) $(HDR)
+omni_gen_icon_png: $(OBJ_STATIC) $(HDR)
 	$(CXX) $^ $(LDFLAGS) -o $@
 
 .PHONY: mk_build
@@ -40,8 +40,8 @@ mk_o:
 
 .PHONY: install
 install:
-	sudo cp omni_gen_icon $(BINDIR)
+	sudo cp omni_gen_icon_png $(BINDIR)
 
 .PHONY: clean
 clean:
-	rm $(BUILDDIR)/*.o omni_gen_icon
+	rm $(BUILDDIR)/*.o omni_gen_icon_png
